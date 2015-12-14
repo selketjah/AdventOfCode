@@ -52,13 +52,17 @@ module SantasFloor =
     )))((()(((()))))(((()()(()()))())((()((())()))((((()()()())((())))(((()(())(((((()(((((()((()(()((((()()(((()()()(((()())(((()()((((())(()))(((()))(())(
     ))((()))(((()((()))(((()()((())((()(((((()((((()()())((()))()((((()((()(()()()("
 
-  let floorCount = 
-    let sum = 0
-    floorInstructions
-    |> Seq.iter (fun s -> addFloor s)
+  let split = 
+    List.ofSeq floorInstructions |> List.toArray
 
-  let addFloor instruction =
-    match instruction with
+  let addFloor s =
+    match s with
     | '(' -> 1
     | ')' -> -1
-    | _ -> 0
+    | _ ->  0
+
+  let floorCount = 
+    split
+    |> Array.map addFloor 
+    |> Array.sum
+
