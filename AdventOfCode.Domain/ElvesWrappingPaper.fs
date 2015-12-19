@@ -19,3 +19,7 @@ module ElvesWrappingPaper =
     let wh = cube.Width * cube.Height
     let hl = cube.Height * cube.Length
     lw + wh + hl
+
+  let getSlack (cube:Cube) : int =
+    let tosort = [ cube.Length; cube.Width; cube.Height ] |> List.sortBy (fun x -> x)
+    tosort.[0] * tosort.[1]    
