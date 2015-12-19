@@ -27,3 +27,10 @@ module ElvesWrappingPaperTests =
     let cube = { Length=1; Width=2; Height=3 }
     let result = getSlack cube
     test <@ expected = result @>
+
+  [<Test>]
+  let `` given cube 1x2x3 it returns total wrapping paper of  13 `` () =
+    let expected = 2
+    let cube = { Length=1; Width=2; Height=3 }
+    let result = getSlack cube
+    test <@ expected = result @>
