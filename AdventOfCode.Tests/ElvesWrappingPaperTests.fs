@@ -15,8 +15,8 @@ module ElvesWrappingPaperTests =
     test <@ expected = result @>
 
   [<Test>]
-  let `` given cube 1x2x3 it returns volume 11 `` () =
-    let expected = (1*2) + (2*3) + (3*1)
+  let `` given cube 1x2x3 it returns volume 22 `` () =
+    let expected = 22
     let cube = { Length=1; Width=2; Height=3 }
     let result = getVolume cube
     test <@ expected = result @>
@@ -29,8 +29,8 @@ module ElvesWrappingPaperTests =
     test <@ expected = result @>
 
   [<Test>]
-  let `` given cube 1x2x3 it returns total wrapping paper of  13 `` () =
-    let expected = 13
+  let `` given cube 1x2x3 it returns total wrapping paper of 24 `` () =
+    let expected = 24
     let input = "1x2x3"
     let result = getWrapperPaperTotal input
     test <@ expected = result @>

@@ -8,16 +8,17 @@ module ElvesWrappingPaper =
   type Cube = {  Length:int; Width:int; Height:int}
 
   let loadFile =
-    File.ReadAllLines("./inputs/elves.txt") |> Seq.cast<string>
+    "B:/PROJECTS/AdventOfCode/AdventOfCode.Domain/inputs/elves.txt"
+    |> File.ReadAllLines
 
   let getCube (input:string) =
     let distances = input.Split [|'x'|]
     {Length = (int)distances.[0];  Width = (int)distances.[1]; Height = (int)distances.[2]}
 
   let getVolume (cube:Cube) : int =
-    let lw = cube.Length * cube.Width
-    let wh = cube.Width * cube.Height
-    let hl = cube.Height * cube.Length
+    let lw = cube.Length * cube.Width * 2
+    let wh = cube.Width * cube.Height * 2
+    let hl = cube.Height * cube.Length * 2
     lw + wh + hl
 
   let getSlack (cube:Cube) : int =
@@ -27,6 +28,11 @@ module ElvesWrappingPaper =
   let getWrapperPaperTotal input =
     let cube = getCube input
     getVolume cube + getSlack cube
+
+  let getWrappingPaper =
+    loadFile 
+    |> Array.map getWrapperPaperTotal
+    |> Array.sum
 
 
 
