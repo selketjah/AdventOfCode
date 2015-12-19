@@ -13,3 +13,10 @@ module ElvesWrappingPaperTests =
     let expected = { Length=1; Width=2; Height=3 }
     let result = getCube "1x2x3"
     test <@ expected = result @>
+
+  [<Test>]
+  let `` given cube 1x2x3 it returns volume 11 ``() =
+    let expected = (1*2) + (2*3) + (3*1)
+    let cube = { Length=1; Width=2; Height=3 }
+    let result = getVolume cube
+    test <@ expected = result @>
