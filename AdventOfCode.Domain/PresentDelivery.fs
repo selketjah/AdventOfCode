@@ -77,6 +77,8 @@ module PresentDelivery =
     | '<' -> (0, -1)
     | _ -> (0, 0)
   
-//  let houseCount = 
-//    let positions = [| (0,0) |]
+  let houseCount = 
+    let positions = [| (0,0) |]
+    split
+    |> Array.map move
 
