@@ -69,8 +69,8 @@ module PresentDelivery =
 
   let split = List.ofSeq route |> List.toArray
   
-  let isNewDirection move = 
-    match move with
+  let move direction = 
+    match direction with
     | '^' -> (1, 0)
     | 'v' -> (-1, 0)
     | '>' -> (0, 1)
