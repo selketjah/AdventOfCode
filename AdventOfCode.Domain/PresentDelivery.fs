@@ -64,5 +64,20 @@ module PresentDelivery  =
     <^v>>v>v^<<<>^>^>^<>v<^^vv><^v<<^v<vvv^vv>v<^<<^^vv^^>vv<^>v>^^<<v^<<^^v<>^>v<<^^<^>^^^v^^<v<^<^>>>v^vv^<^v>^<>^<^<v<^v>>>^<^v<><v<^vv<v>
     v><v^v^^v<vv><^^<><>^>v<^<^vv>><^v><v<>^<>^^>^<><<<v^>>^<>><<><v>vvv^<<^<vv<v><v<^<<<^>^>>v<^>>vv>^v^^^v<>v<>><>^vv^>vv^"
 
+  let split =
+    List.ofSeq route |> List.toArray
 
+  let isNewDirection tuple =
+    match tuple with
+    | ('v', '^') -> 0
+    | ('<', '>') -> 0
+    | ('>', '<') -> 0
+    | ('^', 'v') -> 0
+    | _ ->  1
 
+  let houseCount =
+    let route1 = Array.append [| ' ' |] split
+    let route2 = Array.append split [| ' ' |] 
+    Array.map2 (fun x y -> (x, y)) route1 route2
+    |> Array.map (fun z -> isNewDirection z)
+    |> Array.sum
