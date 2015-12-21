@@ -78,7 +78,7 @@ module PresentDelivery =
     | _ -> (0, 0)
   
   let houseCount = 
-    let positions = [| (0,0) |]
     split
     |> Array.map move
+    |> Array.fold (fun (a, b) (x, y) -> (a + x, b + y)) (0,0)
 
