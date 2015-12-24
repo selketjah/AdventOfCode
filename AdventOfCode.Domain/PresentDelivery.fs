@@ -77,8 +77,12 @@ module PresentDelivery =
     | '<' -> (0, -1)
     | _ -> (0, 0)
   
-  let houseCount = 
+  let getPositions = 
     split
     |> Array.map move
-    |> Array.fold (fun (a, b) (x, y) -> (a + x, b + y)) (0,0)
+    |> Array.scan (fun (a, b) (x, y) -> (a + x, b + y)) (0,0)
+
+  let getNextPosition2 =
+    getPositions
+
 
