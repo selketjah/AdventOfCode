@@ -1,9 +1,0 @@
-B:\PROJECTS\AdventOfCode\AdventOfCode.Solutions\obj\Debug\AdventOfCode.Solutions.fsprojResolveAssemblyReference.cache
-B:\PROJECTS\AdventOfCode\AdventOfCode.Solutions\bin\Debug\AdventOfCode.Solutions.exe.config
-B:\PROJECTS\AdventOfCode\AdventOfCode.Solutions\bin\Debug\AdventOfCode.Solutions.XML
-B:\PROJECTS\AdventOfCode\AdventOfCode.Solutions\bin\Debug\AdventOfCode.Solutions.exe
-B:\PROJECTS\AdventOfCode\AdventOfCode.Solutions\bin\Debug\AdventOfCode.Solutions.pdb
-B:\PROJECTS\AdventOfCode\AdventOfCode.Solutions\bin\Debug\FSharp.Core.dll
-B:\PROJECTS\AdventOfCode\AdventOfCode.Solutions\bin\Debug\FSharp.Core.xml
-B:\PROJECTS\AdventOfCode\AdventOfCode.Solutions\obj\Debug\AdventOfCode.Solutions.exe
-B:\PROJECTS\AdventOfCode\AdventOfCode.Solutions\obj\Debug\AdventOfCode.Solutions.pdb
