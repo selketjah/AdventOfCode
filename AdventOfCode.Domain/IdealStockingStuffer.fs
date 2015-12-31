@@ -5,8 +5,6 @@ open System.Text
 
 module IdealStockingStuffer =
   let input = "yzbqklnj"
-  let extention = 1
-
   let testInput = "pqrstuv1048970"B
 
   let md5 (data : byte array) : string =
@@ -15,8 +13,11 @@ module IdealStockingStuffer =
       ||> Array.fold (fun sb b -> sb.Append(b.ToString("x2")))
       |> string
 
-  let concat = input + extention.ToString()
+  let toBytes extension = Encoding.ASCII.GetBytes(input + extension.ToString())
 
-  let toBytes = Encoding.ASCII.GetBytes(concat)
-
-  let hash = md5 toBytes;
+  let rec checkHash tail =
+    let hash = md5 (toBytes tail)
+    if hash.StartsWith("00000") then
+      printf "%i" tail
+    else
+      checkHash (tail + 1)
