@@ -26,5 +26,5 @@ module NiceSantaWords =
 
   let checkDoubles word =
     match word with
-    | DoubleLetters word -> true
+    | DoubleLetters ab -> true
     | _ -> false

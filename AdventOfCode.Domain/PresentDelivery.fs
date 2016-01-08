@@ -2,8 +2,8 @@
 
 open System
 
-module PresentDelivery = 
-  let route = 
+module PresentDelivery =
+  let data =
     "^><^>>>^<^v<v^^vv^><<^<><<vv^<>^<^v>^vv<>v><vv^^<>>^^^v<<vv><<^>^<^v<^>^v><<<v^<v<<<v<<vv<v<^><^>><>v>v^<<v^^<^v<><^>^<<^^^>v>
     >v^^<v>>^>vv><v>>^>>v^>^v>^<^^v>^>^^v<v>^^<v<>>v^^v><^><^<<>v^<^<^v<v>v^>>>v^v^>^<>^v<^^vv<v>^>^<>^^<vv^<><<v<^<^^>vv<>^>v<^>^v>v^>^v<>^>
     <>><vv<>v^v<><>v^v>>>>v^^>^><^^<v<^><^<v>>^v^v<>v<<<^<<vvvv<<v^vv^>v^^^<^^^<v>>v<^v>>>>>v<^^^^>v<^<><v>>>>><v>>v^vvvv^^<v^<>^v<^v^>v><^>^
@@ -67,22 +67,20 @@ module PresentDelivery =
 
  // let route = "^>v<"
 
-  let split = List.ofSeq route |> List.toArray
-  
-  let move direction = 
+  let route = List.ofSeq data |> List.toArray
+
+  let move direction =
     match direction with
     | '^' -> (1, 0)
     | 'v' -> (-1, 0)
     | '>' -> (0, 1)
     | '<' -> (0, -1)
     | _ -> (0, 0)
-  
-  let getPositions = 
-    split
+
+  let positions =
+    route
     |> Array.map move
     |> Array.scan (fun (a, b) (x, y) -> (a + x, b + y)) (0,0)
     |> Array.distinct
 
-  let numberOfHouses = getPositions.Length
-
-
+  let numberOfHouses = positions.Length
