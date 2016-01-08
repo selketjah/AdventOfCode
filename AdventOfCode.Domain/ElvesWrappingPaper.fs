@@ -8,7 +8,7 @@ module ElvesWrappingPaper =
   type Cube = {  Length:int; Width:int; Height:int}
 
   let sampleData =
-    "B:/PROJECTS/AdventOfCode/AdventOfCode.Domain/inputs/elves.txt"
+    "AdventOfCode.Domain/inputs/elves.txt"
     |> File.ReadAllLines
 
   let parseCube (input:string) =
@@ -36,8 +36,8 @@ module ElvesWrappingPaper =
       |> Seq.take 2
       |> Seq.reduce (*)
 
-      //|> Seq.fold (fun acc x -> acc * x) 1
-      //sorted.[0] * sorted.[1]
+      //|> Seq.fold (fun acc x -> acc * x) 1 => alternative to reduce
+      //sorted.[0] * sorted.[1] => technically correct but not the way to do array manupulation
 
   let wrapperPaperVolumePerPresent input =
     let cube = parseCube input
