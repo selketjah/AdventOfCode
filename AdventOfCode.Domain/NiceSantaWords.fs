@@ -3,6 +3,7 @@ namespace AdventOfCode.Domain
 open System
 open System.IO
 open System.Text
+open System.Text.RegularExpressions
 
 module NiceSantaWords =
   let loadFile =
@@ -18,3 +19,12 @@ module NiceSantaWords =
     | word when word.Contains("pq") -> false
     | word when word.Contains("xy") -> false
     | _ -> true
+
+  let (|DoubleLetters|_|) input =
+     let m = Regex.Match(input,@"(.)\1")
+     if (m.Success) then Some input else None
+
+  let checkDoubles word =
+    match word with
+    | DoubleLetters x -> true
+    | _ -> false
