@@ -7,32 +7,43 @@ module ElvesWrappingPaper =
 
   type Cube = {  Length:int; Width:int; Height:int}
 
-  let loadFile =
+  let sampleData =
     "B:/PROJECTS/AdventOfCode/AdventOfCode.Domain/inputs/elves.txt"
     |> File.ReadAllLines
 
-  let getCube (input:string) =
-    let distances = input.Split [|'x'|]
-    {Length = (int)distances.[0];  Width = (int)distances.[1]; Height = (int)distances.[2]}
+  let parseCube (input:string) =
+    let dimensions =
+      input.Split 'x'
+      |> Array.map int
+    {Length = dimensions.[0];  Width = dimensions.[1]; Height = dimensions.[2]}
 
-  let getVolume (cube:Cube) : int =
+  let volume (cube:Cube) : int =
     let lw = cube.Length * cube.Width * 2
     let wh = cube.Width * cube.Height * 2
     let hl = cube.Height * cube.Length * 2
     lw + wh + hl
 
-  let getSlack (cube:Cube) : int =
-    let tosort = [ cube.Length; cube.Width; cube.Height ] |> List.sortBy (fun x -> x)
-    tosort.[0] * tosort.[1]
+  let slack (cube:Cube) : int =
+    let sorted =
+      (*
+      [| cube.Length; cube.Width; cube.Height |]
+      |> Array.sort
+      sorted.[0] * sorted.[1]
+      *)
 
-  let getWrapperPaperTotal input =
-    let cube = getCube input
-    getVolume cube + getSlack cube
+      [ cube.Length; cube.Width; cube.Height ]
+      |> List.sort
+      |> Seq.take 2
+      |> Seq.reduce (*)
 
-  let getWrappingPaper =
-    loadFile 
-    |> Array.map getWrapperPaperTotal
+      //|> Seq.fold (fun acc x -> acc * x) 1
+      //sorted.[0] * sorted.[1]
+
+  let wrapperPaperVolumePerPresent input =
+    let cube = parseCube input
+    volume cube + slack cube
+
+  let calculateWrappingPaperVolumeOfPresents =
+    sampleData
+    |> Array.map wrapperPaperVolumePerPresent
     |> Array.sum
-
-
-
