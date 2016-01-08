@@ -28,16 +28,13 @@ module ElvesWrappingPaper =
       (*
       [| cube.Length; cube.Width; cube.Height |]
       |> Array.sort
-      sorted.[0] * sorted.[1]
+      sorted.[0] * sorted.[1] => technically correct but not the way to do array manupulation
       *)
-
       [ cube.Length; cube.Width; cube.Height ]
       |> List.sort
       |> Seq.take 2
       |> Seq.reduce (*)
-
       //|> Seq.fold (fun acc x -> acc * x) 1 => alternative to reduce
-      //sorted.[0] * sorted.[1] => technically correct but not the way to do array manupulation
 
   let wrapperPaperVolumePerPresent input =
     let cube = parseCube input
