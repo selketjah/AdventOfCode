@@ -55,6 +55,10 @@
     <Compile Include="IdealStockingStuffer.fs" />
     <Compile Include="NiceSantaWords.fs" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FunWithSeq.fsx" />
+    <Compile Include="scratchpaper.fsx" />
+  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
