@@ -1,4 +1,0 @@
-B:\PROJECTS\AdventOfCode\AdventOfCode.Domain\bin\Debug\AdventOfCode.Solutions.XML
-B:\PROJECTS\AdventOfCode\AdventOfCode.Domain\obj\Debug\AdventOfCode.Domain.fsprojResolveAssemblyReference.cache
-B:\PROJECTS\AdventOfCode\AdventOfCode.Domain\obj\Debug\AdventOfCode.Solutions.exe
-B:\PROJECTS\AdventOfCode\AdventOfCode.Domain\obj\Debug\AdventOfCode.Solutions.pdb
