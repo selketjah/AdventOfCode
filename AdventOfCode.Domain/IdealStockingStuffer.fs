@@ -1,9 +1,10 @@
 ﻿namespace AdventOfCode
 
-open System.Security.Cryptography
-open System.Text
-
 module IdealStockingStuffer =
+
+  open System.Security.Cryptography
+  open System.Text
+
   let input = "yzbqklnj"
   let testInput = "pqrstuv1048970"B
 

@@ -1,11 +1,12 @@
 namespace AdventOfCode.Domain
 
-open System
-open System.IO
-open System.Text
-open System.Text.RegularExpressions
-
 module NiceSantaWords =
+
+  open System
+  open System.IO
+  open System.Text
+  open System.Text.RegularExpressions
+
   let loadFile =
     "B:/PROJECTS/AdventOfCode/AdventOfCode.Domain/inputs/santawords.txt"
     |> File.ReadAllLines

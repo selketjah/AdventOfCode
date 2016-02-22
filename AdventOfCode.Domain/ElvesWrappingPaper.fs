@@ -1,9 +1,9 @@
 ﻿namespace AdventOfCode.Domain
 
-open System
-open System.IO
-
 module ElvesWrappingPaper =
+
+  open System
+  open System.IO
 
   type Cube = {  Length:int; Width:int; Height:int}
 
