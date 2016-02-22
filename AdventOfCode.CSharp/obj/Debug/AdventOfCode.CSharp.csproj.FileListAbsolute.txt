@@ -1,0 +1,5 @@
+E:\labdays\AdventOfCode\AdventOfCode.CSharp\bin\Debug\AdventOfCode.CSharp.dll
+E:\labdays\AdventOfCode\AdventOfCode.CSharp\bin\Debug\AdventOfCode.CSharp.pdb
+E:\labdays\AdventOfCode\AdventOfCode.CSharp\obj\Debug\AdventOfCode.CSharp.csprojResolveAssemblyReference.cache
+E:\labdays\AdventOfCode\AdventOfCode.CSharp\obj\Debug\AdventOfCode.CSharp.dll
+E:\labdays\AdventOfCode\AdventOfCode.CSharp\obj\Debug\AdventOfCode.CSharp.pdb

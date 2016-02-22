@@ -1,0 +1,8 @@
+E:\labdays\AdventOfCode\AdventOfCode.CSharp.Run\bin\Debug\AdventOfCode.CSharp.Run.exe.config
+E:\labdays\AdventOfCode\AdventOfCode.CSharp.Run\bin\Debug\AdventOfCode.CSharp.Run.exe
+E:\labdays\AdventOfCode\AdventOfCode.CSharp.Run\bin\Debug\AdventOfCode.CSharp.Run.pdb
+E:\labdays\AdventOfCode\AdventOfCode.CSharp.Run\bin\Debug\AdventOfCode.CSharp.dll
+E:\labdays\AdventOfCode\AdventOfCode.CSharp.Run\bin\Debug\AdventOfCode.CSharp.pdb
+E:\labdays\AdventOfCode\AdventOfCode.CSharp.Run\obj\Debug\AdventOfCode.CSharp.Run.csprojResolveAssemblyReference.cache
+E:\labdays\AdventOfCode\AdventOfCode.CSharp.Run\obj\Debug\AdventOfCode.CSharp.Run.exe
+E:\labdays\AdventOfCode\AdventOfCode.CSharp.Run\obj\Debug\AdventOfCode.CSharp.Run.pdb
