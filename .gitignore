@@ -1,1 +1,5 @@
 /packages
+/AdventOfCode.Domain/bin
+/AdventOfCode.Domain/obj
+/AdventOfCode.Tests/bin
+/AdventOfCode.Tests/obj
