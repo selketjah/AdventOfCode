@@ -54,6 +54,7 @@
     <Compile Include="PresentDelivery.fs" />
     <Compile Include="IdealStockingStuffer.fs" />
     <Compile Include="NiceSantaWords.fs" />
+    <Compile Include="FireHazard.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
