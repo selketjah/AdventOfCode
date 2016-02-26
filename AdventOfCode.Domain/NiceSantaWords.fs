@@ -8,10 +8,11 @@ module NiceSantaWords =
   open System.Text.RegularExpressions
 
   let loadFile =
-    "B:/PROJECTS/AdventOfCode/AdventOfCode.Domain/inputs/santawords.txt"
+    __SOURCE_DIRECTORY__ + "/inputs/santawords.txt"
     |> File.ReadAllLines
 
-  let vowels = ['a', 'e', 'i', 'o', 'u']
+  let data = 
+    List.ofSeq loadFile |> List.toArray
 
   let matchPattern (word:string) =
     match word with
@@ -20,12 +21,34 @@ module NiceSantaWords =
     | word when word.Contains("pq") -> false
     | word when word.Contains("xy") -> false
     | _ -> true
+    
+  let matchVowel (letter:char) =
+    match letter with
+    | 'a' | 'e' | 'i' | 'o' | 'u' -> true
+    | _ -> false
 
   let (|DoubleLetters|_|) input =
      let m = Regex.Match(input,@"(.)\1")
      if (m.Success) then Some input else None
+     
+  let (|ThreeVowels|_|) input =
+     let m = Regex.Match(input,@"(?i)\\b(?=([^aeiou]*[aeiou]){2,})[a-z]{10}\\b")
+     if (m.Success) then Some input else None
 
-  let checkDoubles word =
+  let doubleLetters word =
     match word with
     | DoubleLetters ab -> true
     | _ -> false
+
+  let threeVowels word =
+    word
+    |> Seq.filter (fun l -> matchVowel l)
+    |> Seq.length
+    |> (fun x -> x >= 3)
+
+  let niceSantaWords =
+    data
+    |> Array.filter(fun w -> matchPattern w && doubleLetters w && threeVowels w)
+    |> Array.length
+    
+ 
