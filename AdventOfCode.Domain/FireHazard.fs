@@ -7,7 +7,7 @@ module FireHazard =
 
   let loadFile =
     __SOURCE_DIRECTORY__ + "/inputs/firehazard.txt"
-    |> File.ReadAllLines
+    |> File.Readlines
 
   let data = 
     List.ofSeq loadFile |> List.toArray
